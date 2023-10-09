@@ -15,10 +15,10 @@ do
                 chmod 600 /home/${admin[n]}/.ssh/authorized_keys
         fi
 
-        # Add user to visudo
-        grep "${admin[n]}" /etc/sudoers > /dev/null 2>&1
-        if ! [ $? -eq 0 ]
-        then
-        echo -e "\n${admin[n]}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-        fi
+        # Add user to visudo (CAREFUL WITH IT)
+        # grep "${admin[n]}" /etc/sudoers > /dev/null 2>&1
+        # if ! [ $? -eq 0 ]
+        # then
+        # echo -e "\n${admin[n]}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+        # fi
 done
